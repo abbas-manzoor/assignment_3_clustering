@@ -4,6 +4,12 @@ import numpy as np
 
 def get_data(file_name, indicators):
     
+    """
+    Reading World Bank Climate data to analyze how the 
+    climate change afftect the total popultaion in 
+    differernt Countries
+    """
+    
     df = pd.read_csv(file_name, index_col=False)
     df = df[df['Indicator Name'].isin(indicators)]
     df.drop(['Country Code', 'Indicator Code', 'Indicator Name'],
